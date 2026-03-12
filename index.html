@@ -1,1 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faran Ahmad Khan</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+line-height:1.6;
+color:#222;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+}
+
+header{
+background:#111;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+nav{
+display:flex;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+opacity:0.7;
+}
+
+#menuBtn{
+display:none;
+background:none;
+border:none;
+font-size:24px;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+height:85vh;
+display:flex;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+margin-top:10px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+.hero-buttons{
+margin-top:25px;
+}
+
+.btn{
+background:#222;
+color:white;
+padding:10px 22px;
+text-decoration:none;
+margin:5px;
+display:inline-block;
+border-radius:4px;
+}
+
+.btn.outline{
+background:transparent;
+border:1px solid #222;
+color:#222;
+}
+
+.section{
+padding:70px 0;
+}
+
+.gray{
+background:#f4f4f4;
+}
+
+.section h2{
+margin-bottom:20px;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.skill{
+background:#222;
+color:white;
+padding:12px;
+text-align:center;
+border-radius:6px;
+font-size:14px;
+}
+
+.timeline-item{
+margin-bottom:25px;
+}
+
+.timeline-item span{
+font-size:14px;
+color:#555;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.project-card{
+background:white;
+padding:20px;
+border-radius:6px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project-links a{
+display:inline-block;
+margin-right:10px;
+margin-top:10px;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#111;
+color:white;
+}
+
+@media(max-width:768px){
+
+nav{
+display:none;
+flex-direction:column;
+background:#111;
+position:absolute;
+top:60px;
+right:0;
+width:200px;
+}
+
+nav a{
+padding:12px;
+border-top:1px solid #333;
+margin:0;
+}
+
+#menuBtn{
+display:block;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<h2>Faran Ahmad Khan</h2>
+
+<nav id="navMenu">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button id="menuBtn">☰</button>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h3>Hello, I'm</h3>
+<h1>Faran Ahmad Khan</h1>
+
+<p>Software Engineer | Java, Spring Boot | Agentic AI</p>
+
+<div class="hero-buttons">
+<a href="#contact" class="btn">Contact Me</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<div class="container">
+
+<h2>About Me</h2>
+
+<p>
+A Software Engineer, adept in agile software development coupled with strong business acumen. Focused on fostering collaboration within small, high-pressure teams while taking on new challenges with strong leadership capabilities. Faran has strong experience in AI software, event-driven microservices, distributed messaging and event streaming systems.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills" class="section gray">
+
+<div class="container">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill">Java</div>
+<div class="skill">Spring Boot</div>
+<div class="skill">REST APIs</div>
+<div class="skill">Microservices</div>
+<div class="skill">Apache Kafka</div>
+<div class="skill">PostgreSQL</div>
+<div class="skill">Redis</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="section">
+
+<div class="container">
+
+<h2>Work Experience</h2>
+
+<div class="timeline-item">
+<h3>Graduate Software Engineer</h3>
+<span>Bed Bath & Beyond Inc. | January 2025 - Present</span>
+<p>
+Reporting to Senior Engineering Manager of Marketing Technology. My roles and responsibilities in the Marketing Technology team:
+</p>
+<ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+
+<li>Improved developer productivity by <strong>40%</strong> by building a multi-agentic system to automate unit test generation.</li>
+
+<li>Increased AI adoption by <strong>10%</strong> by developing custom MCP servers for Spring backend applications.</li>
+
+<li>Enhanced product discovery by <strong>20%</strong> by building conversational search based on <strong>RAG architecture</strong>.</li>
+
+<li>Reduced business overhead by <strong>90%</strong> by implementing REST APIs for multi-tenant URL redirects.</li>
+
+<li>Optimized SEO crawl budget from <strong>140M to 100M</strong> by improving XML sitemap structure.</li>
+
+<li>Increased backend observability by <strong>~90%</strong> by instrumenting backend apps with <strong>OpenTelemetry</strong>.</li>
+
+<li>Reduced development overhead by <strong>20%</strong> by implementing multi-tenancy in Java microservices.</li>
+
+<li>Improved URL redirect latency to <strong>~8ms</strong> using KeyDB caching with dedicated keyspaces.</li>
+
+<li>Reduced infrastructure cost by <strong>50%</strong> by migrating storage from Firestore to Redis on GCP.</li>
+
+<li>Reduced latency by <strong>40%</strong> by migrating backend logic to scalable <strong>Cloud Run functions</strong>.</li>
+
+<li>Enhanced real-time analytics by <strong>60%</strong> via server-side GTM integrations with Google Pub/Sub and BigQuery.</li>
+
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Graduate Software Engineer</h3>
+<span>Bed Bath & Beyond Inc. | June 2024 - Decemeber 2024</span>
+<p>
+Reporting to Senior Engineering Manager of Data Engineering Platforms. My roles and responsibilities in the Data Engineering Platforms team:
+</p>
+<ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+<li>Reduced infrastructure and maintenance cost by <strong>25%</strong> by migrating 46 topics, 36 functions, 4 sources, 11 sinks and 7 apps to a single Apache Pulsar production cluster.</li>
+
+<li>Provided support for continuous feature development on an Apache Pulsar production cluster handling 2400 topics, ~2.8TB daily throughput, ~4TB daily messages, 1000 functions and 1258 connectors.</li>
+
+<li>Built Spring Boot REST APIs using Apache Pulsar for asynchronous messaging with retry handling and dead letter queues (DLQs).</li>
+
+<li>Reduced development overhead by <strong>20%</strong> by migrating 1000 Pulsar functions to Java 17 and upgrading test suites to JUnit 5.</li>
+
+<li>Improved CI/CD pipelines by <strong>15%</strong> by writing integration tests using Testcontainers for backend automation applications.</li>
+
+<li>Improved infrastructure transparency by <strong>10%</strong> by automating provisioning of GCP resources using Terraform.</li>
+
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Freelance Software Engineer</h3>
+<span>Upwork | September 2023 - March 2024</span>
+<p>
+Worked closely with a Senior IT Project Manager on a project focused on computer networking and architecture. My roles and responsibilities:
+</p>
+<ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+<li>Engaged with clients to collect and document functional and non-functional requirements.</li>
+
+<li>Provided a structured approach to design, analyze, and implement networks and protocols, including:
+  <ul>
+    <li>TCP/IP, HTTP/HTTPS, SMTP, DHCP, DNS and routing protocols (RIP, OSPF, BGP)</li>
+    <li>LAN architecture and network design</li>
+    <li>Network security and encryption</li>
+    <li>Private and public network infrastructure</li>
+  </ul>
+</li>
+
+<li>Led knowledge transfer sessions for clients and delivered detailed documentation on network security.</li>
+
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Penetration Testing Intern</h3>
+<span>School of Interdisciplinary Engineering & Sciences (SINES) | December 2022 - June 2023</span>
+<p>
+Worked closely with an Information Security Professional in a Red Team focused on penetration testing. My roles and responsibilities:
+</p>
+<ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+<li>Demonstrated the MITRE ATT&CK Framework and Cyber Kill Chain methodology by exploiting the Follina vulnerability in Microsoft Office (issued May 30, 2022).</li>
+
+<li>Programmed USB Rubber Ducky and Raspberry Pi Pico to disable Windows Defender and Windows Firewall during controlled security demonstrations.</li>
+
+<li>Demonstrated cybersecurity concepts including DNS Tunneling, SQL Injection, Tactics, Techniques and Procedures (TTPs), and Advanced Persistent Threats (APT).</li>
+
+<li>Worked with Kali Linux security tools including Burp Suite and Metasploit, and studied security standards such as ISO/IEC 27001 and GDPR.</li>
+
+</ul>
+</div>
+
+</section>
+
+<section id="education" class="section gray">
+
+<div class="container">
+
+<h2>Education</h2>
+
+<ul>
+  <li>
+    <strong>Bachelor of Science (Honours), Applied Computing</strong><br>
+    Atlantic Technological University, Ireland<br>
+    <em>Grade: First Class Honors</em>
+  </li>
+    <li>
+    <strong>Bachelor of Science (Honours), Computer Science</strong><br>
+    National University of Sciences & Technology, Pakistan<br>
+  </li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="contact" class="section">
+
+<div class="container">
+
+<h2>Contact</h2>
+
+<p>1-1 Session: topmate.io/faranahmadk</p>
+<p>GitHub: github.com/faranahmadk</p>
+<p>LinkedIn: linkedin.com/in/faranahmadk</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Faran Ahmad Khan</p>
+
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+
+menuBtn.addEventListener("click", () => {
+
+if(navMenu.style.display === "flex"){
+navMenu.style.display = "none";
+}else{
+navMenu.style.display = "flex";
+}
+
+});
+
+
+document.querySelectorAll("nav a").forEach(link => {
+
+link.addEventListener("click", function(e){
+
+ e.preventDefault();
+
+ const section = document.querySelector(this.getAttribute("href"));
+
+ section.scrollIntoView({behavior:"smooth"});
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
