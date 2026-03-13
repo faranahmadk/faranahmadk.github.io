@@ -11,33 +11,36 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
 line-height:1.6;
-color:#222;
+color:#333;
+background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+min-height:100vh;
 }
 
 .container{
 width:90%;
-max-width:1000px;
+max-width:1200px;
 margin:auto;
 }
 
 header{
-background:#111;
+background: linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%);
 color:white;
 position:sticky;
 top:0;
 z-index:1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 0;
+padding:20px 0;
 }
 
 nav{
@@ -46,124 +49,311 @@ display:flex;
 
 nav a{
 color:white;
-margin-left:20px;
+margin-left:30px;
 text-decoration:none;
-font-size:14px;
+font-size:16px;
+font-weight:500;
+transition: all 0.3s ease;
 }
 
 nav a:hover{
-opacity:0.7;
+color:#66bb6a;
+transform: translateY(-2px);
 }
 
 #menuBtn{
 display:none;
 background:none;
 border:none;
-font-size:24px;
+font-size:28px;
 color:white;
 cursor:pointer;
 }
 
 .hero{
-height:85vh;
+height:90vh;
 display:flex;
 align-items:center;
 text-align:center;
+background: linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%);
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background: rgba(0,0,0,0.3);
+z-index:1;
+}
+
+.hero .container{
+position:relative;
+z-index:2;
+}
+
+.hero h3{
+font-size:24px;
+margin-bottom:10px;
+opacity:0.9;
 }
 
 .hero h1{
-font-size:48px;
-margin-top:10px;
+font-size:56px;
+margin-bottom:15px;
+font-weight:700;
 }
 
 .hero p{
-margin-top:10px;
-font-size:18px;
+font-size:22px;
+margin-bottom:30px;
+opacity:0.9;
 }
 
 .hero-buttons{
-margin-top:25px;
+margin-top:30px;
 }
 
 .btn{
-background:#222;
+background: linear-gradient(135deg, #4CAF50, #66bb6a);
 color:white;
-padding:10px 22px;
+padding:15px 30px;
 text-decoration:none;
-margin:5px;
+margin:10px;
 display:inline-block;
-border-radius:4px;
+border-radius:50px;
+font-weight:600;
+font-size:16px;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+transform: translateY(-3px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .btn.outline{
 background:transparent;
-border:1px solid #222;
-color:#222;
+border:2px solid #4CAF50;
+color:#4CAF50;
+}
+
+.btn.outline:hover{
+background:#4CAF50;
+color:white;
 }
 
 .section{
-padding:70px 0;
+padding:80px 0;
+background:white;
+margin:20px 0;
+border-radius:10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .gray{
-background:#f4f4f4;
+background:#f8f9fa;
 }
 
 .section h2{
-margin-bottom:20px;
+margin-bottom:30px;
+font-size:36px;
+font-weight:700;
+color:#333;
+text-align:center;
+position:relative;
 }
+
+.section h2::after{
+content:'';
+display:block;
+width:60px;
+height:4px;
+background: linear-gradient(135deg, #4CAF50, #2e7d32);
+margin:10px auto;
+border-radius:2px;
+}
+
+#about h2::before{ content:'👤'; font-size:40px; display:block; margin-bottom:10px; }
+#achievements h2::before{ content:'🏆'; font-size:40px; display:block; margin-bottom:10px; }
+#skills h2::before{ content:'🛠️'; font-size:40px; display:block; margin-bottom:10px; }
+#experience h2::before{ content:'💼'; font-size:40px; display:block; margin-bottom:10px; }
+#education h2::before{ content:'🎓'; font-size:40px; display:block; margin-bottom:10px; }
+#contact h2::before{ content:'📞'; font-size:40px; display:block; margin-bottom:10px; }
 
 .skills-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-gap:15px;
-margin-top:20px;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
 .skill{
-background:#222;
+background: linear-gradient(135deg, #4CAF50, #2e7d32);
 color:white;
-padding:12px;
+padding:15px;
 text-align:center;
-border-radius:6px;
-font-size:14px;
+border-radius:10px;
+font-size:16px;
+font-weight:500;
+transition: all 0.3s ease;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.skill:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.achievements-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+margin-top: 30px;
+}
+
+.achievement-card{
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+border-left: 5px solid #4CAF50;
+}
+
+.achievement-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.achievement-card strong{
+font-weight: normal;
+}
+
+.about-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 30px;
+}
+
+.about-card{
+background: white;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.about-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.about-card h3{
+color: #4CAF50;
+margin-bottom: 15px;
+font-size: 24px;
+}
+
+.education-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+margin-top: 30px;
+}
+
+.education-card{
+background: white;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.education-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.education-card h3{
+color: #4CAF50;
+margin-bottom: 15px;
+font-size: 22px;
+}
+
+.contact-grid{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 30px;
+}
+
+.contact-card{
+background: white;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.contact-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-card h3{
+color: #4CAF50;
+margin-bottom: 15px;
+font-size: 24px;
+}
+
+.contact-card a{
+color: #333;
+text-decoration: none;
+font-weight: 500;
+}
+
+.contact-card a:hover{
+color: #4CAF50;
 }
 
 .timeline-item{
-margin-bottom:25px;
+margin-bottom:30px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+border-left:5px solid #4CAF50;
+}
+
+.timeline-item h3{
+color:#333;
+font-size:24px;
+margin-bottom:5px;
 }
 
 .timeline-item span{
-font-size:14px;
-color:#555;
-}
-
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.project-card{
-background:white;
-padding:20px;
-border-radius:6px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-
-.project-links a{
-display:inline-block;
-margin-right:10px;
-margin-top:10px;
-font-size:14px;
+font-size:16px;
+color:#4CAF50;
+font-weight:500;
 }
 
 footer{
 text-align:center;
-padding:25px;
-background:#111;
+padding:30px;
+background: linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%);
 color:white;
+font-size:16px;
 }
 
 @media(max-width:768px){
@@ -171,16 +361,18 @@ color:white;
 nav{
 display:none;
 flex-direction:column;
-background:#111;
+background: linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%);
 position:absolute;
-top:60px;
+top:70px;
 right:0;
-width:200px;
+width:250px;
+border-radius:0 0 10px 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 nav a{
-padding:12px;
-border-top:1px solid #333;
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,0.1);
 margin:0;
 }
 
@@ -189,7 +381,20 @@ display:block;
 }
 
 .hero h1{
-font-size:36px;
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section{
+padding:60px 0;
+margin:10px 0;
+}
+
+.skills-grid{
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 }
 
 }
@@ -208,9 +413,9 @@ font-size:36px;
 
 <nav id="navMenu">
 <a href="#about">About</a>
+<a href="#achievements">Achievements</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
 <a href="#education">Education</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -228,7 +433,7 @@ font-size:36px;
 <h3>Hello, I'm</h3>
 <h1>Faran Ahmad Khan</h1>
 
-<p>Software Engineer | Java, Spring Boot | Agentic AI</p>
+<p>Engineering @ Bed Bath & Beyond Inc., Ireland</p>
 
 <div class="hero-buttons">
 <a href="#contact" class="btn">Contact Me</a>
@@ -238,15 +443,81 @@ font-size:36px;
 
 </section>
 
-<section id="about" class="section">
+<section id="about" class="section gray">
 
 <div class="container">
 
 <h2>About Me</h2>
 
-<p>
-A Software Engineer, adept in agile software development coupled with strong business acumen. Focused on fostering collaboration within small, high-pressure teams while taking on new challenges with strong leadership capabilities. Faran has strong experience in AI software, event-driven microservices, distributed messaging and event streaming systems.
-</p>
+<div class="about-grid">
+<div class="about-card">
+<h3>🎯 Specialization</h3>
+<p>Agile software development, backend engineering, and event-driven microservices with a focus on API design, automation, observability, and reliability.</p>
+</div>
+<div class="about-card">
+<h3>👥 Leadership</h3>
+<p>Fostering collaboration in small and high-pressure teams, taking on new challenges, and providing strong business acumen and leadership capabilities.</p>
+</div>
+<div class="about-card">
+<h3>🚀 Innovation</h3>
+<p>Active participant in hackathons, AI initiatives, and technology conferences, driving innovation and staying at the forefront of industry trends.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements" class="section">
+
+<div class="container">
+
+<h2>Signature Achievements</h2>
+
+<div class="achievements-grid">
+<div class="achievement-card">
+<p><strong>Earned recognition as a high-performing individual across the organization by consistently delivering lightning talks in Open Space sessions, Show and Tell events, annual hackathons, and technology conferences at Bed Bath & Beyond.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Core contributor to the AI Guild across the organization, promoting awareness and adoption of GenAI tooling including Agentic AI development, MCP Servers, AI Gateways, Agent Skills, and AI Guardrails.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Successfully defended Cyber 5 sales targets for two consecutive years by providing critical on-call development support and resolving productive issues during the peak e-commerce period.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Led cross-company communication with external partners including Vercel and Acxiom, driving integration strategies and improving performance of e-commerce platforms.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Established a reputation as an innovation leader across the organization by actively participating in multiple team hackathons across Ireland including ETH Dublin and National AI Challenge.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>TechKnow Hackathon 2025 partnered with Google Cloud — Co-developed JunieGenie, a multi-agentic system automating the process of writing JUnit 5 unit tests and got appreciation by the Director for using the most AI Agents.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>ETH Dublin 2025 Hackathon — Co-developed KinChain, securing 5th place out of 31 projects among 80+ participating engineers. Designed a blockchain-based solution enabling secure verification and preservation of familial heritage, supporting resilient digital identity for the Irish and global diaspora.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Co-developed BeyondRAG, AI-based conversational search powered by Retrieval Augmented Generation (RAG), where the system intelligently suggests products that match the styles expressed in natural language.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Led a team of six and secured 1st prize for the best python-based game in Bed Bath & Beyond Hackathon 2024.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Managed a team of six and presented a GenAI conveyancing prototype in National AI Challenge 2024, Ireland’s first AI Hackathon partnered with Google Cloud.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Won 2nd position with €500 prize money in ETH Dublin 2024 Hackathon for the best blockchain-based lending platform which integrates a CBDC service providing regulatory compliance to the central banks.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Participated and managed a team of three in the Zero Days CTF 2024, Ireland’s National Cybersecurity competition with 300+ competitors across the globe.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Participated and managed a team of two in NUST Hackathon 2023, representing my campus among 30+ teams across Pakistan.</strong></p>
+</div>
+<div class="achievement-card">
+<p><strong>Mentored 10+ graduate software engineers, accelerated onboarding and proficiency in company-wide software engineering practices and empowered 50+ high school students by teaching them HTML, CSS and JavaScript.</strong></p>
+</div>
+</div>
 
 </div>
 
@@ -284,31 +555,33 @@ A Software Engineer, adept in agile software development coupled with strong bus
 <h3>Graduate Software Engineer</h3>
 <span>Bed Bath & Beyond Inc. | January 2025 - Present</span>
 <p>
-Reporting to Senior Engineering Manager of Marketing Technology. My roles and responsibilities in the Marketing Technology team:
+My roles and responsibilities reporting to Senior Engineering Manager of Marketing Technology:
 </p>
 <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
 
-<li>Improved developer productivity by <strong>40%</strong> by building a multi-agentic system to automate unit test generation.</li>
+<li>Reduced business overhead by designing and developing Spring Boot REST APIs to support multi-tenant URL
+redirects across Overstock, Bed Bath & Beyond and buybuy BABY websites and implemented KeyDB caching
+with dedicated keyspaces to reduce latency.</li>
 
-<li>Increased AI adoption by <strong>10%</strong> by developing custom MCP servers for Spring backend applications.</li>
+<li>Built Spring Boot backend automation that generates XML sitemaps for ~4 million pages, stores them on NetApp
+StorageGRID, and exposes them through public endpoints via internal API Gateways.</li>
 
-<li>Enhanced product discovery by <strong>20%</strong> by building conversational search based on <strong>RAG architecture</strong>.</li>
+<li>Improved XML sitemaps structure on Overstock, Bed Bath & Beyond and buybuy BABY websites and optimized
+SEO crawl budget from ~140M to ~100M.</li>
 
-<li>Reduced business overhead by <strong>90%</strong> by implementing REST APIs for multi-tenant URL redirects.</li>
+<li>Increased observability and monitoring by instrumenting Spring Boot microservices with Java OpenTelemetry
+Agent and improved performance by implementing multi-tenancy using OpenTelemetry Baggage.</li>
 
-<li>Optimized SEO crawl budget from <strong>140M to 100M</strong> by improving XML sitemap structure.</li>
+<li>Reduced infrastructure cost and improved latency by migrating cloud storage from Firestore to a Redis instance
+on GCP.</li>
 
-<li>Increased backend observability by <strong>~90%</strong> by instrumenting backend apps with <strong>OpenTelemetry</strong>.</li>
+<li>Improved security and scalability by migrating backend logic to 10+ Cloud Run functions served through Google
+API Gateway.</li>
 
-<li>Reduced development overhead by <strong>20%</strong> by implementing multi-tenancy in Java microservices.</li>
+<li>Enhanced real-time analytics for Google Analytics reporting by building server-side integrations in Google Tag
+Manager triggering flows in Google Pub/Sub and Google BigQuery.</li>
 
-<li>Improved URL redirect latency to <strong>~8ms</strong> using KeyDB caching with dedicated keyspaces.</li>
-
-<li>Reduced infrastructure cost by <strong>50%</strong> by migrating storage from Firestore to Redis on GCP.</li>
-
-<li>Reduced latency by <strong>40%</strong> by migrating backend logic to scalable <strong>Cloud Run functions</strong>.</li>
-
-<li>Enhanced real-time analytics by <strong>60%</strong> via server-side GTM integrations with Google Pub/Sub and BigQuery.</li>
+<li>Provided on call support 24/7 to product and SEO business teams questions and P1 Incidents.</li>
 
 </ul>
 </div>
@@ -317,20 +590,27 @@ Reporting to Senior Engineering Manager of Marketing Technology. My roles and re
 <h3>Graduate Software Engineer</h3>
 <span>Bed Bath & Beyond Inc. | June 2024 - Decemeber 2024</span>
 <p>
-Reporting to Senior Engineering Manager of Data Engineering Platforms. My roles and responsibilities in the Data Engineering Platforms team:
+My roles and responsibilities reporting to the Senior Engineering Manager of Data Engineering Platforms:
 </p>
 <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
-<li>Reduced infrastructure and maintenance cost by <strong>25%</strong> by migrating 46 topics, 36 functions, 4 sources, 11 sinks and 7 apps to a single Apache Pulsar production cluster.</li>
+<li>Reduced infrastructure and maintenance cost by consolidating messaging workflows containing 46 topics, 36
+functions, 4 sources, 11 sinks and 7 apps to single Apache Pulsar production cluster.</li>
 
-<li>Provided support for continuous feature development on an Apache Pulsar production cluster handling 2400 topics, ~2.8TB daily throughput, ~4TB daily messages, 1000 functions and 1258 connectors.</li>
+<li>Provided technical support on continuous development of features on Apache Pulsar production cluster handling
+2400 topics, ~2.8TB daily throughput, ~4TB daily messages, 1000 functions and 1258 connectors.</li>
 
-<li>Built Spring Boot REST APIs using Apache Pulsar for asynchronous messaging with retry handling and dead letter queues (DLQs).</li>
+<li>Designed and developed Spring Boot REST APIs using Apache Pulsar for async messaging, handling retries
+and DLQs.</li>
+<li>Reduced development overhead through app modernization and standardization by migrating Pulsar functions to
+Java 17 and test suites to JUnit 5.</li>
 
-<li>Reduced development overhead by <strong>20%</strong> by migrating 1000 Pulsar functions to Java 17 and upgrading test suites to JUnit 5.</li>
+<li>Improved CI/CD pipelines by enabling more reliable automated testing and improving confidence in deployment
+workflows by writing integration tests using Testcontainers for backend automation apps.</li>
 
-<li>Improved CI/CD pipelines by <strong>15%</strong> by writing integration tests using Testcontainers for backend automation applications.</li>
+<li>Improved transparency and consistency in infrastructure management through standardized and reproducible
+IaC by automating provision of GCP resources using Terraform.</li>
 
-<li>Improved infrastructure transparency by <strong>10%</strong> by automating provisioning of GCP resources using Terraform.</li>
+<li>Provided on call support 24/7 to development teams questions and P1 Incidents.</li>
 
 </ul>
 </div>
@@ -339,7 +619,7 @@ Reporting to Senior Engineering Manager of Data Engineering Platforms. My roles 
 <h3>Freelance Software Engineer</h3>
 <span>Upwork | September 2023 - March 2024</span>
 <p>
-Worked closely with a Senior IT Project Manager on a project focused on computer networking and architecture. My roles and responsibilities:
+My roles and responsibilities reporting to the Senior IT Manager:
 </p>
 <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
 <li>Engaged with clients to collect and document functional and non-functional requirements.</li>
@@ -360,9 +640,9 @@ Worked closely with a Senior IT Project Manager on a project focused on computer
 
 <div class="timeline-item">
 <h3>Penetration Testing Intern</h3>
-<span>School of Interdisciplinary Engineering & Sciences (SINES) | December 2022 - June 2023</span>
+<span>Defense Research & Innovation Lab | December 2022 - June 2023</span>
 <p>
-Worked closely with an Information Security Professional in a Red Team focused on penetration testing. My roles and responsibilities:
+My roles and responsibilities in the Red Team reporting to the Manager of Cyber Security:
 </p>
 <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
 <li>Demonstrated the MITRE ATT&CK Framework and Cyber Kill Chain methodology by exploiting the Follina vulnerability in Microsoft Office (issued May 30, 2022).</li>
@@ -384,17 +664,17 @@ Worked closely with an Information Security Professional in a Red Team focused o
 
 <h2>Education</h2>
 
-<ul>
-  <li>
-    <strong>Bachelor of Science (Honours), Applied Computing</strong><br>
-    Atlantic Technological University, Ireland<br>
-    <em>Grade: First Class Honors</em>
-  </li>
-    <li>
-    <strong>Bachelor of Science (Honours), Computer Science</strong><br>
-    National University of Sciences & Technology, Pakistan<br>
-  </li>
-</ul>
+<div class="education-grid">
+<div class="education-card">
+<h3>🎓 Bachelor of Science (Honours), Applied Computing</h3>
+<p><strong>Atlantic Technological University, Ireland</strong></p>
+<p><em>Grade: First Class Honors</em></p>
+</div>
+<div class="education-card">
+<h3>🎓 Bachelor of Science (Honours), Computer Science</h3>
+<p><strong>National University of Sciences & Technology, Pakistan</strong></p>
+</div>
+</div>
 
 </div>
 
@@ -406,9 +686,20 @@ Worked closely with an Information Security Professional in a Red Team focused o
 
 <h2>Contact</h2>
 
-<p>1-1 Session: topmate.io/faranahmadk</p>
-<p>GitHub: github.com/faranahmadk</p>
-<p>LinkedIn: linkedin.com/in/faranahmadk</p>
+<div class="contact-grid">
+<div class="contact-card">
+<h3>💬 1-1 Session</h3>
+<p><a href="https://topmate.io/faranahmadk" target="_blank">topmate.io/faranahmadk</a></p>
+</div>
+<div class="contact-card">
+<h3>🐙 GitHub</h3>
+<p><a href="https://github.com/faranahmadk" target="_blank">github.com/faranahmadk</a></p>
+</div>
+<div class="contact-card">
+<h3>💼 LinkedIn</h3>
+<p><a href="https://linkedin.com/in/faranahmadk" target="_blank">linkedin.com/in/faranahmadk</a></p>
+</div>
+</div>
 
 </div>
 
