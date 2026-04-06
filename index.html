@@ -441,6 +441,7 @@
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
+          <a href="./research.html">Research</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -913,11 +914,14 @@
 
       document.querySelectorAll("nav a").forEach((link) => {
         link.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const section = document.querySelector(this.getAttribute("href"));
-
-          section.scrollIntoView({ behavior: "smooth" });
+          const href = this.getAttribute("href");
+          if (href.startsWith("#")) {
+            e.preventDefault();
+            const section = document.querySelector(href);
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }
         });
       });
     </script>
