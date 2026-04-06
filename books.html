@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research Papers - Faran Ahmad Khan</title>
+    <title>Books - Faran Ahmad Khan</title>
 
     <style>
       * {
@@ -141,21 +141,21 @@
         border-radius: 2px;
       }
 
-      #research h2::before {
-        content: "📚";
+      #books h2::before {
+        content: "📖";
         font-size: 40px;
         display: block;
         margin-bottom: 10px;
       }
 
-      .research-grid {
+      .books-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
         margin-top: 30px;
       }
 
-      .research-card {
+      .book-card {
         background: white;
         padding: 25px;
         border-radius: 10px;
@@ -168,12 +168,12 @@
         justify-content: center;
       }
 
-      .research-card:hover {
+      .book-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
-      .research-card h3 {
+      .book-card h3 {
         color: #4caf50;
         margin-bottom: 15px;
         font-size: 22px;
@@ -223,7 +223,7 @@
           margin: 10px 0;
         }
 
-        .research-grid {
+        .books-grid {
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
       }
@@ -256,34 +256,28 @@
 
     <section class="hero">
       <div class="container">
-        <h3>Exploring Knowledge</h3>
-        <h1>Research Papers</h1>
-        <p>A collection of research papers I've read and found insightful.</p>
+        <h3>Expanding Horizons</h3>
+        <h1>Books</h1>
+        <p>A collection of books I've read and recommend.</p>
       </div>
     </section>
 
-    <section id="research" class="section">
+    <section id="books" class="section">
       <div class="container">
-        <h2>Research Papers</h2>
+        <h2>Books</h2>
 
-        <div class="research-grid">
-          <div class="research-card">
-            <h3>
-              <a href="pdf/bitcoin.pdf" target="_blank"
-                >Bitcoin: A Peer-to-Peer Electronic Cash System</a
-              >
-            </h3>
+        <div class="books-grid">
+          <div class="book-card">
+            <h3>Rich Dad, Poor Dad</h3>
+            <p><strong>Author:</strong> Robert Kiyosaki</p>
           </div>
-          <div class="research-card">
-            <h3>
-              <a
-                href="pdf/From%20the%20discovering%20of%20reality%20to%20creating%20multiple%20realities%20the%20Aristotelian%20roots%20of%20modern%20anthropocentricism.pdf"
-                target="_blank"
-              >
-                FROM THE DISCOVERING OF REALITY TO CREATING MULTIPLE REALITIES:
-                THE ARISTOTELIAN ROOTS OF MODERN ANTHROPOCENTRICISM
-              </a>
-            </h3>
+          <div class="book-card">
+            <h3>Rework</h3>
+            <p><strong>Author:</strong> Jason Fried</p>
+          </div>
+          <div class="book-card">
+            <h3>The Monk Who Sold His Ferrari</h3>
+            <p><strong>Author:</strong> Robin Sharma</p>
           </div>
         </div>
       </div>
