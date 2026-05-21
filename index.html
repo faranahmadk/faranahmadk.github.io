@@ -222,23 +222,27 @@
 
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
         margin-top: 30px;
       }
 
       .skill {
         background: linear-gradient(135deg, #4caf50, #2e7d32);
         color: white;
-        padding: 15px;
+        padding: 16px;
         text-align: center;
         border-radius: 10px;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 600;
         transition: all 0.3s ease;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        min-height: 90px;
+        min-height: auto;
         overflow-wrap: break-word;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .skill:hover {
@@ -429,6 +433,12 @@
 
         .skills-grid {
           grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+
+        .skill {
+          font-size: 13px;
+          padding: 14px;
+          min-height: auto;
         }
       }
     </style>
@@ -646,21 +656,14 @@
 
     <section id="skills" class="section gray">
       <div class="container">
-        <h2>Skills</h2>
+        <h2>Top Skills</h2>
 
         <div class="skills-grid">
-          <div class="skill">Agentic Software Development</div>
-          <div class="skill">Java Backend Services and Automation</div>
-          <div class="skill">Backend Messaging Services (Kafka, Pulsar)</div>
-          <div class="skill">REST API Design and Development</div>
-          <div class="skill">Event-Driven Microservices</div>
-          <div class="skill">Databases (PostgreSQL, MySQL, Redis, KeyDB)</div>
-          <div class="skill">Observability and Monitoring</div>
-          <div class="skill">Infrastructure as Code (IaC)</div>
-          <div class="skill">Containerization and Orchestration</div>
-          <div class="skill">Cloud Platforms (GCP, AWS)</div>
-          <div class="skill">Java, Python, JavaScript, C#, C++</div>
-          <div class="skill">Spring Boot, NodeJS</div>
+          <div class="skill">Java</div>
+          <div class="skill">Spring Boot</div>
+          <div class="skill">Apache Pulsar</div>
+          <div class="skill">PostgreSQL</div>
+          <div class="skill">Google Cloud Platform (GCP)</div>
         </div>
       </div>
     </section>
