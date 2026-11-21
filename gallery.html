@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A timeline of Faran Ahmad Khan's conferences, hackathons, open-space sessions, and show-and-tell events."
+    />
+    <title>Gallery - Faran Ahmad Khan</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>"
+    />
+    <style>
+      :root {
+        --green: #2e7d32;
+        --green-bright: #4caf50;
+        --ink: #1d2b22;
+        --muted: #5c6b60;
+        --paper: #f4f8f2;
+        --line: #cbd9ca;
+        --accent: #e87852;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        line-height: 1.6;
+        color: var(--ink);
+        background: var(--paper);
+        min-height: 100vh;
+      }
+
+      .container {
+        width: min(90%, 1200px);
+        margin: auto;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--green-bright), var(--green));
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav {
+        min-height: 76px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .brand {
+        flex: 0 0 auto;
+        color: white;
+        text-decoration: none;
+        font-size: 19px;
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px 16px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover,
+      nav a[aria-current="page"] {
+        color: #d7f0d7;
+      }
+
+      #menuBtn {
+        display: none;
+        padding: 8px;
+        border: 0;
+        color: white;
+        background: transparent;
+        font-size: 25px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .intro {
+        padding: 54px 0 46px;
+        background:
+          radial-gradient(ellipse at 82% 20%, rgba(76, 175, 80, 0.1), transparent 34%),
+          linear-gradient(180deg, #fbfdf9, var(--paper));
+      }
+
+      .intro-layout {
+        display: grid;
+        grid-template-columns: minmax(260px, 1fr) max-content;
+        align-items: center;
+        gap: 54px;
+      }
+
+      .eyebrow,
+      .event-kind {
+        color: var(--green);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+      }
+
+      .intro h1 {
+        margin: 7px 0 12px;
+        font-size: clamp(42px, 6vw, 68px);
+        line-height: 1.04;
+        color: var(--ink);
+      }
+
+      .intro-copy {
+        max-width: 430px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .intro-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 24px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .intro-note::before {
+        width: 23px;
+        height: 2px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .featured-image {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 290px;
+        display: block;
+        object-fit: contain;
+      }
+
+      .timeline-section {
+        padding: 52px 0 94px;
+      }
+
+      .timeline-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline-heading h2 {
+        margin-top: 3px;
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .timeline-count {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .timeline-list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 38px 0 0;
+      }
+
+      .timeline-list::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background: var(--line);
+        content: "";
+      }
+
+      .timeline-item {
+        position: relative;
+        width: calc(50% - 38px);
+        display: grid;
+        grid-template-columns: minmax(120px, 0.9fr) minmax(155px, 1.1fr);
+        min-height: 190px;
+        background: #fff;
+        border: 1px solid #e1e9df;
+        border-radius: 6px;
+        overflow: hidden;
+        animation: arrive 0.55s ease both;
+      }
+
+      .timeline-item:nth-child(even) {
+        margin-left: auto;
+      }
+
+      .timeline-item::before {
+        position: absolute;
+        top: 24px;
+        right: -46px;
+        z-index: 1;
+        width: 15px;
+        height: 15px;
+        border: 4px solid var(--paper);
+        border-radius: 50%;
+        background: var(--green-bright);
+        box-shadow: 0 0 0 1px var(--green-bright);
+        content: "";
+      }
+
+      .timeline-item:nth-child(even)::before {
+        right: auto;
+        left: -46px;
+      }
+
+      .event-photo {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        justify-self: center;
+        align-self: center;
+        object-fit: contain;
+        background: #dce8da;
+      }
+
+      .event-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 19px;
+      }
+
+      .event-kind {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .event-copy h3 {
+        margin: 5px 0 11px;
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .event-copy p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .placeholder {
+        padding-left: 10px;
+        border-left: 2px solid #d5e5d2;
+      }
+
+      footer {
+        padding: 24px;
+        background: linear-gradient(135deg, var(--green-bright), var(--green));
+        color: white;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 1000px) {
+        .nav {
+          gap: 14px;
+        }
+
+        nav {
+          gap: 4px 10px;
+        }
+
+        nav a {
+          font-size: 13px;
+        }
+
+        .intro-layout {
+          gap: 32px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav {
+          min-height: 68px;
+          position: relative;
+        }
+
+        #menuBtn {
+          display: block;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          top: 68px;
+          right: 0;
+          left: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 8px 18px;
+          background: var(--green);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        nav.open {
+          display: flex;
+        }
+
+        nav a {
+          padding: 10px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+          font-size: 15px;
+        }
+
+        .intro {
+          padding: 38px 0 32px;
+        }
+
+        .intro-layout {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .intro h1 {
+          font-size: 48px;
+        }
+
+        .intro-copy {
+          font-size: 16px;
+        }
+
+        .featured-image {
+          max-height: 230px;
+        }
+
+        .timeline-section {
+          padding: 36px 0 60px;
+        }
+
+        .timeline-heading {
+          align-items: start;
+          flex-direction: column;
+          gap: 5px;
+          padding-bottom: 20px;
+        }
+
+        .timeline-heading h2 {
+          font-size: 28px;
+        }
+
+        .timeline-list {
+          gap: 18px;
+          padding: 24px 0 0 25px;
+        }
+
+        .timeline-list::before {
+          left: 6px;
+        }
+
+        .timeline-item,
+        .timeline-item:nth-child(even) {
+          width: 100%;
+          margin-left: 0;
+          grid-template-columns: minmax(110px, 0.85fr) minmax(140px, 1.15fr);
+        }
+
+        .timeline-item::before,
+        .timeline-item:nth-child(even)::before {
+          top: 22px;
+          right: auto;
+          left: -26px;
+        }
+
+        .event-photo {
+          max-height: 170px;
+        }
+
+        .event-copy {
+          padding: 15px 14px;
+        }
+
+        .event-copy h3 {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 470px) {
+        .container {
+          width: min(92%, 1200px);
+        }
+
+        .brand {
+          font-size: 17px;
+        }
+
+        .featured-image {
+          max-height: 190px;
+        }
+
+        .timeline-list {
+          padding-left: 21px;
+        }
+
+        .timeline-item,
+        .timeline-item:nth-child(even) {
+          grid-template-columns: 1fr;
+        }
+
+        .event-photo {
+          max-height: 190px;
+          min-height: 0;
+        }
+
+        .event-copy {
+          padding: 15px 17px 18px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html">Faran Ahmad Khan</a>
+        <nav id="navMenu" aria-label="Main navigation">
+          <a href="index.html#about">About</a>
+          <a href="index.html#achievements">Achievements</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#education">Education</a>
+          <a href="research.html">Research</a>
+          <a href="courses.html">Courses</a>
+          <a href="books.html">Books</a>
+          <a href="gallery.html" aria-current="page">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <button
+          id="menuBtn"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="container intro-layout">
+          <div>
+            <p class="eyebrow">People · Ideas · Making</p>
+            <h1 id="page-title">Gallery</h1>
+            <p class="intro-copy">
+              A timeline of the rooms, teams, and ideas that have shaped my journey
+              in technology.
+            </p>
+            <p class="intro-note">13 moments, and counting</p>
+          </div>
+          <img
+            class="featured-image"
+            src="images/1748385245511.jpg"
+            alt="Speaking on stage at a technology event"
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <section class="timeline-section" aria-labelledby="timeline-title">
+        <div class="container">
+          <div class="timeline-heading">
+            <div>
+              <p class="eyebrow">Learning out loud</p>
+              <h2 id="timeline-title">The timeline</h2>
+            </div>
+            <p class="timeline-count">proof-of-concepts, hackathons &amp; conferences</p>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1711356748296.jpg" alt="Team members working together around a laptop" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2023-03">Mar 2023</time> · Hackathon</p>
+                <h3>NUST Hackathon 2023</h3>
+                <p class="placeholder">Represented my university as Team Red at NUST Hackathon 2023 in MCS, NUST. CTF had modules in Reverse Engineering and Malware, Cryptography, Web Penetration and Network Security.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1711357224781.jpg" alt="Team members at Zero Days CTF" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-03">Mar 2024</time> · CTF</p>
+                <h3>Zero Days CTF 2024</h3>
+                <p class="placeholder">Represented my university as Team Binary Bandits at Zero Days CTF 2024 in Dublin. CTF had modules in Web Security, Network Security, Wireless and IoT Security, Cryptography, Exploitation, Reverse Engineering, Forensics and Puzzles.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1719371447167.jpg" alt="Team presenting at a hackathon" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-06">Jun 2024</time> · Hackathon</p>
+                <h3>ETH Dublin 2024</h3>
+                <p class="placeholder">Secured 2nd prize by SEEBLOCKS.eu at ETH Dublin 2024 hackathon for best web3 use case, documentation and implementation.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1726037344635.jpg" alt="Presenting a proof-of-concept to an audience" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-08">Aug 2024</time> · Hackathon</p>
+                <h3>National AI Challenge 2024</h3>
+                <p class="placeholder">Participated in Ireland's first AI Hackathon as Team Rag Masters and presented a RAG-based solution for conveyancing in Ireland.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1743726088889.jpg" alt="Blockchain and Web3 conference presentation slide" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-10">Oct 2024</time> · Annual Technology Conference</p>
+                <h3>TechKnow 2024: Blockchain &amp; Web3</h3>
+                <p class="placeholder">Participated in the annual technology conference 2024 at Beyond Inc. as a presenter and delivered a talk on Blockchain and Web3.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1743725503083.jpg" alt="Retrieval-Augmented Generation conference presentation slide" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-10">Oct 2024</time> · Annual Technology Conference</p>
+                <h3>TechKnow 2024: AI &amp; RAG</h3>
+                <p class="placeholder">Participated in the annual technology conference 2024 at Beyond Inc. as a presenter and delivered a talk on AI and Retrieval-Augmented Generation (RAG).</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1743724928064.jpg" alt="Receiving an event certificate" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2024-12">Dec 2024</time> · Chess Competition</p>
+                <h3>Beyond Chess Competition 2024</h3>
+                <p class="placeholder">Won 1st prize in Chess tournament 2024 at Beyond Inc.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1781386195606.jpg" alt="Learn to Play Chess presentation graphic" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2025-03">Mar 2025</time> · Open Space</p>
+                <h3>Open Space 2025 Presenter</h3>
+                <p class="placeholder">Participated in the Open Space 2025 event at Bed Bath &amp; Beyond Inc. and presented a talk on Chess fundamentals.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1748385245511.jpg" alt="Speaking on stage at a technology event" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2025-05">May 2025</time> · Hackathon</p>
+                <h3>ETH Dublin 2025</h3>
+                <p class="placeholder">Top 5 finalists at ETH Dublin 2025 hackathon for best web3 use case, documentation and implementation.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1781386314948.jpg" alt="Epistemic Injustice in Generative AI presentation slide" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2025-09">Sep 2025</time> · Open Space</p>
+                <h3>Open Space 2025 Presenter</h3>
+                <p class="placeholder">Participated in the Open Space 2025 event at Bed Bath &amp; Beyond Inc. and presented a talk on Epistemic Injustice in Generative AI - A review of the research paper by Google.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1765662213022.jpg" alt="JunieGenie multi-agent system diagram" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2025-12">Dec 2025</time> · Hackathon</p>
+                <h3>TechKno Hackathon 2025</h3>
+                <p class="placeholder">Participated in the internal Bed Bath &amp; Beyond Inc. hackathon 2025 partnered with Google Cloud and presented a multi-agentic system to automate the process of writing unit tests - JunieGenie</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1772623735648.jpg" alt="Getting Started with WM presentation slide" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2026-02">Feb 2026</time> · Show &amp; Tell</p>
+                <h3>Show and Tell 2026 Presenter</h3>
+                <p class="placeholder">Participated in the Show and Tell 2026 event at Bed Bath &amp; Beyond Inc. and presented a talk on WireMock - API Mocking</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <img class="event-photo" src="images/1772623485456.jpg" alt="Transcendental Reasoning by Kant presentation slide" loading="lazy" />
+              <div class="event-copy">
+                <p class="event-kind"><time datetime="2026-03">Mar 2026</time> · Open Space</p>
+                <h3>Open Space 2026 Presenter</h3>
+                <p class="placeholder">Participated in the Open Space 2026 event at Bed Bath &amp; Beyond Inc. and presented a talk on Transcendental Reasoning by Kant.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Faran Ahmad Khan</p>
+    </footer>
+
+    <script>
+      const timeline = document.querySelector(".timeline-list");
+      [...timeline.querySelectorAll(".timeline-item")]
+        .sort((first, second) =>
+          second.querySelector("time").dateTime.localeCompare(
+            first.querySelector("time").dateTime,
+          ),
+        )
+        .forEach((item) => timeline.append(item));
+
+      const menuBtn = document.getElementById("menuBtn");
+      const navMenu = document.getElementById("navMenu");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+        menuBtn.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation menu" : "Open navigation menu",
+        );
+      });
+    </script>
+  </body>
+</html>
